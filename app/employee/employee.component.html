@@ -1,0 +1,112 @@
+<div class="container-fluid mt-100">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-lg-4">
+            <input  type="number" [(ngModel)]="EMPID">
+                <input type="button" (click)="getEmployeeByID()" value="Get Employee By Id">
+            </div>
+            <div class="col-lg-4">
+              <input type="button" (click)="getAllEmployees()" value="Get ALL Employee">
+            </div>
+            <div class="col-lg-4">
+  
+              <input   type="number" [(ngModel)]="EMPIDFORDELTE">
+              <input type="button" (click)="deleteEmployee()" value="Delete Employee">
+            </div>
+            </div>
+            <div class="active-member">
+              <div class="table-responsive">
+                <table class="table table-xs mb-0 mt-5">
+                  <thead>
+                    <tr style="background-color:black; color: white;">
+                      <th scope="col">Employee ID</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Dept</th>
+                      <th scope="col">Designation</th>
+                      <th scope="col">Update</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let empObj of arrEmployees">
+                      <td>{{empObj.Emp_id}}</td>
+                      <td>{{empObj.EmpName}}</td>
+                      <td>{{empObj.Dept}}</td>
+                      <td>{{empObj.Designation}}</td>
+                      <td>
+                      
+                        <button (click)="update(empObj)">Update</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  
+  
+  <!-- <input type="button" (click)="insertEmployee()" value="Insert Employee"><br><br> -->
+  
+  <p style="text-align: center;" [ngClass]="['para']">Insertion of new employee</p>
+  <div class="container">
+    <form [formGroup]="addEmp" (ngSubmit)="collectResto()" [ngClass]="['offset-lg-2 col-lg-8', 'mainCard']">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Id</label>
+        <input type="text" class="form-control" formControlName="Emp_id" >
+        
+      </div>
+      
+      <div class="form-group">
+          <label for="exampleInputEmail1">name</label>
+          <input type="text" class="form-control" formControlName="EmpName" >
+          
+        </div>
+        
+        <div class="form-group">
+          <label for="exampleInputEmail1">Dept</label>
+          <input type="text" class="form-control" formControlName="Dept" >
+          
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1"> Designation</label>
+          <input type="text" class="form-control" formControlName="Designation" >
+          
+        </div>
+        
+      <button style="margin-top: 10px;" type="submit" [ngClass]="['btn1']">Submit</button>
+    </form> 
+  </div>
+  
+  <p style="text-align: center;" [ngClass]="['para']">update of employee</p>
+  
+  
+  <div class="container">
+    <form [formGroup]="editEmp" (ngSubmit)="collection()" [ngClass]="['offset-lg-2 col-lg-8', 'mainCard']">
+      
+      <div class="form-group">
+          <label for="exampleInputEmail1">Name</label>
+          <input type="text" class="form-control" formControlName="EmpName" placeholder="Enter Policy Amount">
+          
+        </div>
+        
+        <div class="form-group">
+          <label for="exampleInputEmail1">Dept</label>
+          <input type="text" class="form-control" formControlName="Dept" placeholder="Enter Amount for EMI">
+          
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1"> Designation name</label>
+          <input type="text" class="form-control" formControlName="Designation" placeholder="Enter  Nominees name">
+          
+        </div>
+        
+      <button style="margin-top: 10px;" type="submit" [ngClass]="['btn1']">Update</button>
+    </form> 
+  </div>

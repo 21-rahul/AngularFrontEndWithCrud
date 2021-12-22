@@ -1,0 +1,69 @@
+/* @import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Roboto');
+
+
+table{
+ margin-top: 100px;
+ border-collapse: collapse;
+ border-spacing: 0;
+ box-shadow: 0 2px 15px rgba(64,64,64,.7);
+ border-radius: 12px 12px 0 0;
+ overflow: hidden;
+
+}
+td , th{
+ padding: 15px 20px;
+ text-align: center;
+ 
+
+}
+th{
+
+ font-family: 'Open Sans',Sans-serif;
+ font-weight: 200;
+ text-transform: uppercase;
+
+}
+tr{
+ width: 100%;
+ background-color: #fafafa;
+ 
+ font-family: 'Montserrat', sans-serif;
+}
+tr:nth-child(even){
+ background-color: #eeeeee;
+} */
+
+
+.mt-100 {
+    margin-top: 70px;
+ 
+}
+
+.card {
+    
+    margin-bottom: 30px;
+    border: 0px;
+    border-radius: 0.25rem;
+    box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.08)
+}
+
+.card .card-body {
+    padding: 1.88rem 1.81rem
+}
+
+.table thead th {
+    border-bottom: none;
+    border-top: none;
+    vertical-align: middle
+}
+
+.table th,
+.table td {
+    padding: 1rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6
+}
+
+.progress {
+    margin-top: 6px
+}
